@@ -1,0 +1,53 @@
+================================================================================
+DOCUMENTAÇÃO DO PROJETO ACADÉMICO
+================================================================================
+
+TÍTULO DO PROJETO:
+Sistema de Gestão de Filas de Espera e Atendimento de Utentes - Hospital Geral do Uíge
+
+CURSO: 3.º Ano de Engenharia Informática
+AUTOR: José André Gabriel
+LINGUAGEM UTILIZADA: Python (Nível Iniciante / Estruturado)
+
+--------------------------------------------------------------------------------
+1. OBJETIVO DO SISTEMA
+--------------------------------------------------------------------------------
+O presente software foi desenvolvido para responder à necessidade do Hospital 
+Geral do Uíge em organizar o fluxo de chegada dos pacientes, reduzir o tempo 
+de espera e garantir transparência no encaminhamento para os consultórios.
+
+--------------------------------------------------------------------------------
+2. FUNCIONALIDADES PRINCIPAIS
+--------------------------------------------------------------------------------
+a) Registo e Emissão de Senhas:
+   - O sistema regista o nome do utente à chegada e gera uma senha sequencial 
+     automática.
+   - Respeita as prioridades clínicas e legais (idosos, gestantes, crianças de 
+     colo e urgências), atribuindo o prefixo "P-" para prioritários e "N-" para 
+     atendimento normal.
+
+b) Encaminhamento Hospitalar:
+   - Com base na necessidade do utente (Clínica Geral, Pediatria ou Urgência), 
+     o sistema indica imediatamente a sala de destino, bem como o nome do médico 
+     e do enfermeiro responsáveis pelo turno.
+
+c) Gestão de Chamadas (FIFO - First In, First Out):
+   - A chamada para atendimento dá prioridade total à fila prioritária. Apenas 
+     quando não existem utentes prioritários em espera é que o sistema chama o 
+     próximo utente da fila normal, respeitando rigorosamente a ordem de chegada.
+
+d) Monitorização em Tempo Real:
+   - Permite aos funcionários visualizar quantos utentes aguardam em cada fila.
+
+--------------------------------------------------------------------------------
+3. ESTRUTURA TÉCNICA SIMPLIFICADA
+--------------------------------------------------------------------------------
+Para facilitar a manutenção e compreensão do código, foram utilizadas estruturas 
+fundamentais da linguagem Python:
+- Listas ([]): Para armazenar as filas de espera (fila_prioritaria e fila_normal).
+- Dicionários ({}): Para agrupar as informações de cada utente (senha, nome, 
+  sala, médico e enfermeiro).
+- Ciclo de Repetição (while True): Para manter o menu ativo continuamente.
+- Estruturas Condicionais (if / elif / else): Para controlar as opções do menu, 
+  definir as prioridades e atribuir as equipas médicas.
+================================================================================
